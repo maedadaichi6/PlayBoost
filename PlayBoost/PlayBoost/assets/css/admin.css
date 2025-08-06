@@ -1,0 +1,260 @@
+/* ====== 基本設定 ====== */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: #121212; /* ダークモード基調 */
+    color: #fff;
+}
+
+/* ====== 管理レイアウト ====== */
+.admin-container {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* ====== サイドバー ====== */
+.sidebar {
+    width: 250px;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    box-shadow: 3px 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar .logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    color: #fff;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.sidebar .highlight {
+    color: #00ff88;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    margin-bottom: 15px;
+}
+
+.sidebar nav ul li a {
+    display: block;
+    padding: 12px 15px;
+    color: #ccc;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.sidebar nav ul li a:hover,
+.sidebar nav ul li a.active {
+    background: #00ff88;
+    color: #000;
+}
+
+/* ====== メインコンテンツ ====== */
+.main-content {
+    flex: 1;
+    margin-left: 250px;
+    padding: 40px;
+    background: #1c1c1c;
+    overflow-y: auto;
+}
+
+.main-content h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #00ff88;
+}
+
+/* ====== ダッシュボードカード ====== */
+.dashboard-cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.dashboard-card {
+    flex: 1;
+    min-width: 280px;
+    background: #222;
+    padding: 25px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #fff;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s, background 0.3s;
+}
+
+.dashboard-card:hover {
+    background: #00ff88;
+    color: #000;
+    transform: translateY(-8px);
+}
+
+.dashboard-card h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.dashboard-card p {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* ====== 管理テーブル ====== */
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+    background: #2a2a2a;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.admin-table th, .admin-table td {
+    padding: 14px;
+    text-align: left;
+}
+
+.admin-table th {
+    background: #00ff88;
+    color: #000;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.admin-table tr:nth-child(even) {
+    background: #333;
+}
+
+.admin-table tr:hover {
+    background: #444;
+}
+
+/* ====== ボタン ====== */
+.btn-view, .btn-edit, .btn-delete {
+    display: inline-block;
+    padding: 8px 14px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: 0.3s;
+    margin-right: 6px;
+}
+
+.btn-view {
+    background: #00ff88;
+    color: #000;
+}
+.btn-view:hover {
+    background: #00cc6a;
+}
+
+.btn-edit {
+    background: #007BFF;
+    color: #fff;
+}
+.btn-edit:hover {
+    background: #0056b3;
+}
+
+.btn-delete {
+    background: #dc3545;
+    color: #fff;
+}
+.btn-delete:hover {
+    background: #a71d2a;
+}
+
+/* ====== ログイン画面 ====== */
+.admin-login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #00ff88, #000);
+}
+
+.admin-login-box {
+    background: #222;
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    width: 350px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+}
+
+.admin-login-box h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #00ff88;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 6px;
+    border: none;
+    background: #333;
+    color: #fff;
+    font-size: 16px;
+}
+
+.login-form .btn-primary {
+    width: 100%;
+    padding: 12px;
+    background: #00ff88;
+    color: #000;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.login-form .btn-primary:hover {
+    background: #00cc6a;
+}
+
+.error {
+    color: #ff4d4d;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* ====== レスポンシブ対応 ====== */
+@media (max-width: 900px) {
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        justify-content: space-around;
+        box-shadow: none;
+    }
+    .main-content {
+        margin-left: 0;
+        padding: 20px;
+    }
+    .dashboard-cards {
+        flex-direction: column;
+    }
+}
